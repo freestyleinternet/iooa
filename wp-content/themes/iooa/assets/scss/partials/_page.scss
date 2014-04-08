@@ -1,6 +1,7 @@
 /* GENERAL */
 body {
-	
+	color:#fff;
+	background:$brand-dark;
 }
 
 a,
@@ -10,15 +11,25 @@ a:visited {
 a:hover {
 	color: $linkHoverColor;
 }
-
 ::-moz-selection {
     background: $selectionColor;
     text-shadow: none;
 }
-
 ::selection {
     background: $selectionColor;
     text-shadow: none;
+}
+
+.wrapper {
+	width:92%;
+	margin:0 auto;
+	@include microclearfix;
+	@include bp(tablet) {
+		width:96%;
+	}
+	@include bp(desktop) {
+		width:960px;
+	}
 }
 
 /* HEADINGS / TYPOGRAPHY */
@@ -33,27 +44,79 @@ h2 { }
 h3 { }
 h4.widgettitle { }
 
+
 /* STRUCTURE */
-#container {
-	max-width: $pageWidth;
-	margin: 20px auto;
+.topbar {
+	width:100%;
+	min-height:em(55);
+	display:block;
+	background:#000;
+}
+header {
+	width:100%;
+	min-height:em(116);
+	display:block;
+	background:$brand-dark;
+}
+nav {
+	width:100%;
+	min-height:em(45);
+	display:block;
+	background:$brand-three;
+}
+.container {
+	width:100%;
+	background:#000;
 }
 
-/* HEADER */
-header { }
-#logo { }
+.wall {
+	width:100%;
+	margin:0 auto;
+	@include microclearfix;
+	@include bp(desktoplarge) {
+		width:1600px;
+	}
+}
+article {
+	float: left;
+	width:100%;
+	min-height:em(160);
+	background:$brand-dark;
+	margin:2px 0;
+	padding: 1%;
+	box-sizing:border-box;
+	@include bp(phone) {
+		width:49.8%;
+		margin:2px 0.1%;
+	}
+	@include bp(midway) {
+		width:33.13333333333333%;
+		margin:2px 0.1%;
+	}
+	@include bp(desktop) {
+		width: 24.8%;
+		margin:2px 0.1%;
+	}
+}
 
-/* NAV */
-nav { }
 
-/* MAIN */
-#main { }
+.social-media {
+	width:100%;
+	min-height:em(45);
+	display:inline-block;
+	background:#000;
+}
 
 /* SIDEBAR */
 aside { }
 
 /* FOOTER */
-footer { }
+footer { 
+	width:100%;
+	min-height:em(45);
+	display:inline-block;
+	background:$brand-dark;
+}
 
 /****************************************
 PAGE TEMPLATES

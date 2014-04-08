@@ -14,14 +14,22 @@
 	<!--[if lt IE 8]>
 	    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
+    
+    <div class="topbar">
+    	<div class="wrapper">
+    		<p>Topbar</p>	
+        </div>
+    </div>
+    
+    <header>
+    	<div class="wrapper">
+    		<p>Header</p>
+        </div>
+    </header>
+    
+    <nav>
+    	<div class="wrapper">
+    		<p>Navigation</p>
+        </div>
+    </nav>
 
-	<div id="container">
-
-		<header>
-			<a id="logo" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
-			<div class="description"><?php bloginfo( 'description' ); ?></div>
-		</header>
-
-		<nav>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav>

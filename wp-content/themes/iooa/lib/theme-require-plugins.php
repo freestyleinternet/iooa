@@ -13,7 +13,6 @@ function mb_register_required_plugins() {
 			'required' 			=> true,
 			'force_activation'	=> true
 		),
-
 		array(
 			'name' 				=> 'Google Analytics for WordPress',
 			'slug' 				=> 'google-analytics-for-wordpress',

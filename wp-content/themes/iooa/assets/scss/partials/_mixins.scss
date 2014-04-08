@@ -3,14 +3,23 @@
  * @include bp(tablet) { SCSS here };
 */
 @mixin bp($point) {
-	@if $point == biggie {
-		@media (max-width : 1600px) { @content; }
+	@if $point == bigdesktop {
+		@media (min-width : 1800px) { @content; }
+	}
+	@if $point == desktoplarge {
+		@media (min-width : 1600px) { @content; }
+	}
+	@if $point == desktop {
+		@media (min-width : 960px) { @content; }
+	}
+	@if $point == midway {
+		@media (min-width : 800px) { @content; }
 	}
 	@if $point == tablet {
-		@media (max-width : 1024px) { @content; }
+		@media (min-width : 768px) { @content; }
 	}
 	@else if $point == phone {
-		@media (max-width : 768px) { @content; }
+		@media (min-width : 400px) { @content; }
 	}
 }
 
