@@ -2,8 +2,8 @@
 /**
  * The template used for displaying post navigation
  *
- * @package mattbanks
- * @since mattbanks 2.5
+ * @package freestyleinternet
+ * @since freestyleinternet 2.5
  */
 ?>
 

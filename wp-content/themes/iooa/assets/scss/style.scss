@@ -1,5 +1,5 @@
 /*!
-Theme Name: Code 96 Theme
+Theme Name: IOOA Theme
 Theme URI: http://www.freestyleinternet.co.uk
 Description: Freestyle Custom Theme Build
 Author: Annemarie Parsons
@@ -9,6 +9,9 @@ Version: 1.0
 
 // Compass imports
 @import "compass";
+
+// Bourbon mixins
+@import "bourbon/bourbon";
 
 // Reset, Variables, Mixins, Etc
 // DO NOT EDIT ORDER OF FILES
