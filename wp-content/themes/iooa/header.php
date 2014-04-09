@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-touch-icon.png">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
 	<?php wp_head(); ?>
 </head>
 
@@ -17,7 +18,11 @@
     
     <div class="topbar">
     	<div class="wrapper">
-    		<p>Topbar</p>	
+    		<a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/cibo-logo.svg" alt=""/></a>
+            <ul>
+              <li><a href="#">THE CIOB</a></li>
+                <li><a href="#">EVENTS</a></li>
+          </ul>	
         </div>
     </div>
     
@@ -29,7 +34,27 @@
     
     <nav>
     	<div class="wrapper">
-    		<p>Navigation</p>
+    		<div class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">About the awards</a>
+                        <ul>
+                            <li><a href="#">Sub menu item</a></li>
+                            <li><a href="#">Sub menu item</a></li>
+                            <li><a href="#">Sub menu item</a></li>
+                            <li><a href="#">Sub menu item</a></li>
+                            <li><a href="#">Sub menu item</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Judges</a></li>
+                    <li><a href="#">Award categories</a></li>
+                    <li><a href="#">Past winners</a></li>
+                    <li><a href="#">The awards night</a></li>
+                    <li><a href="#">Sponsors</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 

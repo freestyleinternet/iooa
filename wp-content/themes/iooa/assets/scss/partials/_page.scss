@@ -2,14 +2,20 @@
 body {
 	color:#fff;
 	background:$brand-dark;
+	font-size:100%;
+	font-family: 'Open Sans', sans-serif;
 }
-
-a,
-a:visited {
+a {
 	color: $linkColor;
+	text-decoration:none;
 }
 a:hover {
 	color: $linkHoverColor;
+}
+nav, ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
 }
 ::-moz-selection {
     background: $selectionColor;
@@ -50,7 +56,9 @@ h4.widgettitle { }
 	width:100%;
 	min-height:em(55);
 	display:block;
+	padding:em(12) 0 em(14) 0;
 	background:#000;
+
 }
 header {
 	width:100%;
@@ -58,12 +66,7 @@ header {
 	display:block;
 	background:$brand-dark;
 }
-nav {
-	width:100%;
-	min-height:em(45);
-	display:block;
-	background:$brand-three;
-}
+
 .container {
 	width:100%;
 	background:#000;
@@ -84,14 +87,24 @@ article {
 	background:$brand-dark;
 	margin:2px 0;
 	padding: 1%;
-	box-sizing:border-box;
 	@include bp(phone) {
-		width:49.8%;
+		width:49.4%;
 		margin:2px 0.1%;
+	}
+	@include bp(tablet) {
+		width:49.4%;
+		margin:2px 0.3%;
 	}
 	@include bp(midway) {
 		width:33.13333333333333%;
 		margin:2px 0.1%;
+	}
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape) {
+		width:32.73333333333333%;
+		margin:2px 0.3%;
 	}
 	@include bp(desktop) {
 		width: 24.8%;
