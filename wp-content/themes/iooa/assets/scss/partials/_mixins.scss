@@ -34,6 +34,18 @@
 }
 
 /*
+ * Mixin for vertical aligning text
+ * @include vertical-align;
+*/
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*
  * Mixin for basic CSS triangles
  * @include triangle(up, #000, 50px)
 */

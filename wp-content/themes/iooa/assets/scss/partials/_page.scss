@@ -50,6 +50,12 @@ h2 { }
 h3 { }
 h4.widgettitle { }
 
+p {
+	margin:0;
+	padding:0;
+	line-height:20px;
+}
+
 
 /* STRUCTURE */
 .topbar {
@@ -112,6 +118,44 @@ article {
 	}
 }
 
+/*   Pop box */
+article {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+	cursor:pointer;
+	.mask {
+		width:100%;
+		height:100%;
+		position: absolute;
+		overflow: hidden;
+		top: 0;
+		left: 0;
+		opacity:0;
+		@include transition (all 0.3s ease-in);
+		.absolute-center {
+			@include vertical-align;
+		}
+	}
+}
+article .mask p {
+    transform: translateY(-100px);
+    opacity: 0;
+	@include transition (all 0.2s ease-in-out);
+}
+article:hover .mask {
+	opacity: 1;
+	@include transform(translateY(0px));
+	background:$brand-red;
+	p {
+		opacity:1;
+		@include transform(translateY(0px));
+	}
+}
+article:hover .no-mask {
+	opacity:0;
+}
 
 .social-media {
 	width:100%;

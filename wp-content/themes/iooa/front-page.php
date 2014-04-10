@@ -4,18 +4,102 @@
 
 		<div class="container">
             <div class="wall">
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
+                <article>
+                	<div class="no-mask"> 
+                        <p>Active</p> 
+                    </div>
+                	<div class="mask"> 
+                        <div class="absolute-center"><p>Enter Now</p> </div>
+                    </div>
+                </article>
             </div>
         </div>
 
