@@ -25,6 +25,9 @@ nav, ul {
     background: $selectionColor;
     text-shadow: none;
 }
+img {
+	max-width:100%;
+}
 
 .wrapper {
 	width:92%;
@@ -40,20 +43,29 @@ nav, ul {
 
 /* HEADINGS / TYPOGRAPHY */
 h1, h2, h3, h4 {
+	font-size:em(16);
 	font-weight: normal;
 	margin: 0 0 10px 0;
 }
 h1 {
-font-size:em(100)
+
 }
 h2 { }
 h3 { }
 h4.widgettitle { }
-
 p {
 	margin:0;
 	padding:0;
 	line-height:20px;
+}
+
+/* Buttons */
+.red-btn {
+	color:#fff;
+	font-size:em(14);
+	text-transform:uppercase;
+	background:$brand-red;
+	padding:em(6) em(8);
 }
 
 
@@ -62,15 +74,67 @@ p {
 	width:100%;
 	min-height:em(55);
 	display:block;
-	padding:em(12) 0 em(14) 0;
+	padding:em(60) 0 em(14) 0;
 	background:#000;
-
+	@include bp(tablet) {
+		padding-top:em(12);
+	}
+	img {
+		width:100px;
+		height:22px;
+		margin-top:em(8);
+		@include bp(tablet) {
+			width:auto;
+			height:auto;
+		}
+	}
 }
 header {
 	width:100%;
-	min-height:em(116);
 	display:block;
 	background:$brand-dark;
+	h1 {
+		float:left;
+		color:$brand-light;
+		font-size:em(18);
+		font-weight:600;
+		padding:0 em(10);
+		border-right:2px solid $brand-red;
+		border-left:2px solid $brand-red;
+		word-break:break-all;
+		margin:em(16) 0;
+		display:none;
+		visibility:hidden;
+		@include bp(tablet) {
+			display:block;
+			visibility:visible;
+		}
+	}
+}
+.world {
+	float:right;
+	width:100%;
+	min-height:em(116);
+	display:block;
+	background:url(#{$assetPath}/the-world.svg) no-repeat bottom right;
+	background-size:247px 61px;
+	@include bp(tablet) {
+		background-size:447px 105px;
+	}
+	h2, h3 {
+		display:inline-block;
+		font-size:em(18);
+		margin:0 0 0 em(10);	
+		text-transform:uppercase;
+	}
+	h2 {
+		color:$brand-light;
+		
+		margin-top:em(18);
+	}
+	h3 {
+		color:#fff;
+	}
 }
 
 .container {
@@ -87,23 +151,31 @@ header {
 	}
 }
 article {
+	overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+	cursor:pointer;
 	float: left;
 	width:100%;
-	min-height:em(160);
+	min-height:em(200);
 	background:$brand-dark;
 	margin:2px 0;
 	padding: 1%;
 	@include bp(phone) {
 		width:49.4%;
+		min-height:em(149);
 		margin:2px 0.1%;
 	}
 	@include bp(tablet) {
 		width:49.4%;
 		margin:2px 0.3%;
+		min-height:em(237);
 	}
 	@include bp(midway) {
 		width:33.13333333333333%;
 		margin:2px 0.1%;
+		min-height:em(166);
 	}
 	@media only screen 
 	and (min-device-width : 768px) 
@@ -111,20 +183,20 @@ article {
 	and (orientation : landscape) {
 		width:32.73333333333333%;
 		margin:2px 0.3%;
+		min-height:em(155);
 	}
 	@include bp(desktop) {
 		width: 24.8%;
 		margin:2px 0.1%;
+		min-height:em(155);
+	}
+	@include bp(desktoplarge) {
+		min-height:em(246);
 	}
 }
 
-/*   Pop box */
+/*   Pop box  */
 article {
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    cursor: default;
-	cursor:pointer;
 	.mask {
 		width:100%;
 		height:100%;
@@ -132,36 +204,182 @@ article {
 		overflow: hidden;
 		top: 0;
 		left: 0;
-		opacity:0;
 		@include transition (all 0.3s ease-in);
 		.absolute-center {
 			@include vertical-align;
 		}
 	}
+	img, h1, a {
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:100;
+	}
+	h1 {
+		font-size:em(20);
+		line-height:26px;
+		text-align:left;
+		top:em(22);
+		left:18px;
+		text-transform:uppercase;
+		z-index:200;
+	}
+	.red-btn {
+		top:em(127);
+		left:18px;
+		z-index:200;
+	}
 }
+article.first {
+	display:none;
+	visibility:hidden;
+	@include bp(tablet) {
+		display:block;
+		visibility:visible;
+	}
+}
+article .no-mask.textcontent {
+	h1 {
+		position:relative;
+		top:8px;
+		float:left;
+		font-size:em(18);
+		line-height:24px;
+		color:$brand-light;
+		font-weight:600;
+		padding:0 em(10);
+		border-left:2px solid $brand-red;
+		word-break:break-all;
+		@include bp(tablet) {
+			font-size:em(30);
+			line-height:36px;
+		}
+		@include bp(desktoplarge) {
+			top:3px;
+			font-size:em(37);
+			line-height:43px;
+			min-height:172px;
+		}
+	}
+	img.bottomr {
+		position:absolute;
+		top:auto;
+		left:auto;
+		right:0;
+		bottom:0 ;
+		margin:0;
+		padding:0;
+		width:60%;
+		@include bp(desktop) {
+			width:50%;
+		}
+		@include bp(desktoplarge) {
+			width:auto;
+		}
+		&.extra {
+			width:50%;
+			@include bp(desktop) {
+				width:auto;
+				right:em(43);
+				bottom:em(18);
+			}
+		}
+	}
+	&.first h1 {
+		top:em(9);
+	}
+}
+
+article .no-mask.textcontent.first h1 {
+	top:25px;
+	font-size:em(30);
+	line-height:36px;
+	@include bp(phone) {
+		font-size:em(18);
+		line-height:24px;
+	}
+	@include bp(desktop) {
+		top:8px;
+		font-size:em(18);
+		line-height:24px;
+	}
+	@include bp(desktoplarge) {
+		top:3px;
+		font-size:em(37);
+		line-height:43px;
+	}
+}
+
+
 article .mask p {
+	font-size:em(30);
+	text-transform:uppercase;
     transform: translateY(-100px);
     opacity: 0;
 	@include transition (all 0.2s ease-in-out);
 }
-article:hover .mask {
+article:hover .mask,
+article:target .mask {
 	opacity: 1;
 	@include transform(translateY(0px));
 	background:$brand-red;
-	p {
+	a .absolute-center p {
 		opacity:1;
 		@include transform(translateY(0px));
 	}
+	a {
+		width:100%;
+		height:100%;
+		display:block;
+		&:hover   {
+			color:#fff;
+		}
+	}
 }
-article:hover .no-mask {
+article:hover .no-mask,
+article:target .no-mask {
 	opacity:0;
 }
 
+
+
+
+
+/* Social media bar */
 .social-media {
 	width:100%;
 	min-height:em(45);
+	padding:em(30) 0 em(25) 0;
 	display:inline-block;
 	background:#000;
+}
+
+.social-icons {
+	li {
+		display:inline-block;
+		a {
+			width:29px;
+			height:29px;
+			display:block;
+			margin-right:em(10);
+			&.facebook {
+				background:url(#{$assetPath}/facebook-icon.svg) no-repeat center left;	
+			}
+			&.linkedin {
+				background:url(#{$assetPath}/linkedin-icon.svg) no-repeat center left;	
+			}
+			&.flickr {
+				background:url(#{$assetPath}/flickr-icon.svg) no-repeat center left;	
+			}
+			&.youtube {
+				width:35px;
+				background:url(#{$assetPath}/youtube-icon.svg) no-repeat center left;	
+			}
+			&.twitter {
+				background:url(#{$assetPath}/twitter-icon.svg) no-repeat center left;	
+			}
+		}
+	}
 }
 
 /* SIDEBAR */
@@ -171,8 +389,22 @@ aside { }
 footer { 
 	width:100%;
 	min-height:em(45);
+	padding:em(18) 0;
 	display:inline-block;
 	background:$brand-dark;
+	ul li a {
+		font-size:em(12);
+		font-weight:700;
+	}
+}
+
+.col4 {
+	float:left;
+	width:100%;
+	margin-bottom:em(18);
+	@include bp(tablet) {
+		width:25%;
+	}
 }
 
 /****************************************

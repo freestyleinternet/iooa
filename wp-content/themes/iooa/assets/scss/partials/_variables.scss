@@ -9,9 +9,12 @@ $linkColor:#fff;
 $linkHoverColor: #ce0000;
 
 $brand-dark:#19202d;
+$brand-light:#a1bbe1;
 $brand-three:#cacaca;
 $brand-red:#ce0000;
 $light-blue:#00a6df;
 $orange:#ff9c3a;
 
-// Other
+// Path to images
+// Use #{$assetPath}/
+$assetPath : "assets/images";
