@@ -2,8 +2,23 @@
 
 article {  }
 
-blockquote { background: url(assets/images/icons/blockquote.png) no-repeat 0 12px; padding: 10px 20px 10px 50px; font-style: italic; }
-blockquote p { }
+blockquote {
+	width:100%; 
+	padding:0;
+	margin:0; 
+	font-style: italic;
+	display:inline-block;
+	p {
+		font-size:em(20);
+		span {
+			font-style:normal;
+			font-size:14px;
+			font-weight:700;
+			color:#000;
+		}
+	}
+}
+
 
 ul, ol { }
 

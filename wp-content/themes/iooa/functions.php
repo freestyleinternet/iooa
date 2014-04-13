@@ -25,6 +25,15 @@ Misc Theme Functions
 *****************************************/
 
 /**
+ * Allow SVG file upload in Wordpress Admin area
+ */
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+/**
  * Define custom post type capabilities for use with Members
  */
 function mb_add_post_type_caps() {

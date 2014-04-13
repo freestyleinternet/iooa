@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div id="main" role="main">
+	<main role="main">
 
 		<div class="container">
             <div class="wall">
@@ -123,7 +123,7 @@
             </div>
         </div>
 
-	</div> <!-- /#main -->
+	</main> <!-- /#main -->
 
 <?php get_sidebar(); ?>
 

@@ -3,29 +3,16 @@
 	// Navigation responsive
 	$('nav').meanmenu();
 	
-	//ipad and iphone fix hover fix	
-	/* if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
-		var flag = false;
-		 $("article").bind('touchstart click', function(){
-		  if (!flag) {
-			flag = true;
-			setTimeout(function(){ flag = false; }, 100);
-			// do something
-			
-		  }
-		  return false
-		});
-	} */
+	// Gallery
+	$('.slideshow').cycle();
+	var slideshows = $('.cycle-slideshow').on('cycle-next cycle-prev', function(e, opts) {
+		slideshows.not(this).cycle('goto', opts.currSlide);
+	});
+	$('#cycle-2 div').click(function(){
+		var index = $('#cycle-2').data('cycle.API').getSlideIndex(this);
+slideshows.cycle('goto', index);
+	});
 
-	/*if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
-		$("article").bind('touchstart', function(){
-			console.log("touch started");
-		});
-	
-		$(".menu li a").bind('touchend', function(){
-			console.log("touch ended");
-		});
-	}*/
 
 	// Home page wall
 	equalheight = function(container){

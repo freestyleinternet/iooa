@@ -8,6 +8,8 @@
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-touch-icon.png">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "701044eb-d205-461c-95f2-1b96b1e3ee47", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
 	<?php wp_head(); ?>
 </head>
 
@@ -39,25 +41,14 @@
     <nav>
     	<div class="wrapper">
     		<div class="navigation">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li>
-                        <a href="#">About the awards</a>
-                        <ul>
-                            <li><a href="#">Sub menu item</a></li>
-                            <li><a href="#">Sub menu item</a></li>
-                            <li><a href="#">Sub menu item</a></li>
-                            <li><a href="#">Sub menu item</a></li>
-                            <li><a href="#">Sub menu item</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Judges</a></li>
-                    <li><a href="#">Award categories</a></li>
-                    <li><a href="#">Past winners</a></li>
-                    <li><a href="#">The awards night</a></li>
-                    <li><a href="#">Sponsors</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
+                <?php
+                        wp_nav_menu(
+                            array(
+                            'menu'		  => 'main-menu',
+                            'container'       => '',
+                            'menu_class'	=> 'holder'
+                        ));
+                    ?>
             </div>
         </div>
     </nav>
