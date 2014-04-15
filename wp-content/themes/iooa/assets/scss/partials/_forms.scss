@@ -3,13 +3,60 @@
 form { }
 
 /* Gravity Forms */
+body .gform_wrapper .gform_body .gform_fields .gfield {
+	width:100%;
+	display:inline-block;
+	margin-bottom:em(6);
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+	float:left;
+	width:30%;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text] {
+	float:right;
+	width:65%;
+	border:1px solid $brand-dark;
+}
 
-.gform_wrapper { }
-.gform_heading { }
-.gform_description { }
-.gform_body { }
-.gform_fields { }
-.gfield { }
-.ginput_container { }
-.gform_footer { }
-.gform_button { }
+#field_1_6 label {
+	width:82%;
+	@include bp(tablet) {
+		width:50%;
+	}
+	@include bp(desktop) {
+		width:40%;
+	}
+}
+#field_1_6 input {
+	width:18%;
+	@include bp(tablet) {
+		width:30%;
+	}
+	@include bp(desktop) {
+		width:35%;
+	}
+}
+
+.gfield_html.gfield_html_formatted.gfield_no_follows_desc p {
+	font-size:em(14);
+	color:$brand-dark;
+}
+
+body .gform_wrapper .gform_footer input[type=submit] {
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	display:block;
+	color:$brand-light;
+	font-size:em(16);
+	text-align:left;
+	padding:em(14) em(16) em(14) em(33);
+	background:#19202d url(#{$assetPath}/download-arrow.svg) no-repeat 12px center;	
+	border:none;
+	outline:none;
+	-webkit-appearance: none;
+    border-radius: 0;
+}
+
+

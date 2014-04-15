@@ -31,9 +31,11 @@
     <header>
     	<div class="wrapper">
         	<div class="world">
-            	<h1>INTERNATIONAL<br>OUTSTANDING<br>ACHIEVEMENT<br>AWARDS</h1>
-                <h2>Award Night</h2><br>
-                <h3>24th April 2014</h3>
+                <h1><?php echo the_field('banner_strap_line', 5); ?></h1>
+                <?php if( get_field('awards_night_date', 5) ): ?>
+                	<h2>Award Night</h2><br>
+                	<h3><?php echo the_field('awards_night_date', 5); ?></h3>
+                <?php endif; ?>
             </div>
         </div>
     </header>

@@ -153,7 +153,8 @@ header {
 		width:1600px;
 	}
 }
-article {
+.home article,
+.page-template-archive-winner-php article {
 	overflow: hidden;
     position: relative;
     text-align: center;
@@ -161,45 +162,39 @@ article {
 	cursor:pointer;
 	float: left;
 	width:100%;
-	min-height:em(200);
+	/*min-height:em(200);*/
 	background:$brand-dark;
 	margin:2px 0;
-	padding: 1%;
+	padding:0;
 	@include bp(phone) {
 		width:49.4%;
-		min-height:em(149);
+		/*min-height:em(149);*/
 		margin:2px 0.1%;
 	}
 	@include bp(tablet) {
 		width:49.4%;
 		margin:2px 0.3%;
-		min-height:em(237);
+		/*min-height:em(237);*/
 	}
 	@include bp(midway) {
 		width:33.13333333333333%;
 		margin:2px 0.1%;
-		min-height:em(166);
+		/*min-height:em(166);*/
 	}
-	@media only screen 
-	and (min-device-width : 768px) 
-	and (max-device-width : 1024px) 
-	and (orientation : landscape) {
-		width:32.73333333333333%;
-		margin:2px 0.3%;
-		min-height:em(155);
-	}
+	
 	@include bp(desktop) {
 		width: 24.8%;
 		margin:2px 0.1%;
-		min-height:em(155);
+		/*min-height:em(155);*/
 	}
 	@include bp(desktoplarge) {
-		min-height:em(246);
+		/*min-height:em(246);*/
 	}
 }
 
 /*   Pop box  */
-article {
+.home article,
+.page-template-archive-winner-php article {
 	.mask {
 		width:100%;
 		height:100%;
@@ -213,7 +208,7 @@ article {
 			@include vertical-align;
 		}
 	}
-	img, h1, a {
+	h1, a {
 		position:absolute;
 		top:0;
 		left:0;
@@ -234,7 +229,8 @@ article {
 		z-index:200;
 	}
 }
-article.first {
+.home article.first,
+.page-template-archive-winner-php article.first {
 	display:none;
 	visibility:hidden;
 	@include bp(tablet) {
@@ -242,11 +238,13 @@ article.first {
 		visibility:visible;
 	}
 }
-article .no-mask.textcontent {
+.home article .no-mask.textcontent,
+.page-template-archive-winner-php article .no-mask.textcontent {
 	h1 {
-		position:relative;
+		position:absolute;
 		top:8px;
 		float:left;
+		margin-top:0;
 		font-size:em(18);
 		line-height:24px;
 		color:$brand-light;
@@ -257,6 +255,10 @@ article .no-mask.textcontent {
 		@include bp(tablet) {
 			font-size:em(30);
 			line-height:36px;
+			margin-top:em(12);
+		}
+		@include bp(desktop) {
+			margin-top:em(10);
 		}
 		@include bp(desktoplarge) {
 			top:3px;
@@ -291,16 +293,24 @@ article .no-mask.textcontent {
 	}
 	&.first h1 {
 		top:em(9);
+		@include bp(desktop) {
+			top:em(15);
+		}
 	}
 }
 
-article .no-mask.textcontent.first h1 {
+.home article .no-mask.textcontent.first h1,
+.page-template-archive-winner-php article .no-mask.textcontent.first h1 {
 	top:25px;
 	font-size:em(30);
 	line-height:36px;
 	@include bp(phone) {
 		font-size:em(18);
 		line-height:24px;
+	}
+	@include bp(tablet) {
+		font-size:em(30);
+		line-height:36px;
 	}
 	@include bp(desktop) {
 		top:8px;
@@ -315,15 +325,18 @@ article .no-mask.textcontent.first h1 {
 }
 
 
-article .mask p {
+.home article .mask p,
+.page-template-archive-winner-php article .mask p {
 	font-size:em(30);
 	text-transform:uppercase;
     transform: translateY(-100px);
     opacity: 0;
 	@include transition (all 0.2s ease-in-out);
 }
-article:hover .mask,
-article:target .mask {
+.home article:hover .mask,
+.home article:target .mask,
+.page-template-archive-winner-php article:target .mask, 
+.page-template-archive-winner-php article:hover .mask {
 	opacity: 1;
 	@include transform(translateY(0px));
 	background:$brand-red;
@@ -340,8 +353,10 @@ article:target .mask {
 		}
 	}
 }
-article:hover .no-mask,
-article:target .no-mask {
+.home article:hover .no-mask,
+.home article:target .no-mask,
+.page-template-archive-winner-php article:target .no-mask,
+.page-template-archive-winner-php article:hover .no-mask {
 	opacity:0;
 }
 
@@ -349,6 +364,8 @@ article:target .no-mask {
 /*  Share this */
 .sharethisbar {
 	float:right;
+	width:100%;
+	text-align:right;
 	margin:em(20) 0 em(17) 0;
 }
 .stButton .stButton_gradient {
@@ -375,8 +392,75 @@ article:target .no-mask {
 		border-left:2px solid $brand-red;
 	}
 }
-.page main {
+.head-winner {
+	position:relative;
+	min-height:161px;
+	margin-bottom:em(20);
+	background-color:$brand-dark;
+	img {
+		position:absolute;
+		bottom:0;
+		
+		display:block;
+	}
+	.content-holder {
+		position:absolute;
+		bottom:0;
+		left:em(23);
+		width:65%;
+		@include bp(desktop) {
+			top:em(5);
+			bottom:auto;
+			width:50%;
+		}
+		p {
+			font-size:em(16);
+			font-weight:600;
+			margin-bottom:0;
+		}
+		h2 {
+			color:#fff;
+			font-size:em(16);
+			font-weight:600;
+			margin-bottom:0;
+			@include bp(desktop) {
+				font-size:em(20);
+			}
+		}
+		h1{
+			color:$text-light;
+			font-size:em(20);
+			font-weight:600;
+			@include bp(desktop) {
+				font-size:em(30);
+			}
+		}
+	}
+}
+
+.page main,
+.archive main,
+.single main  {
 	background:#fff;
+}
+
+.single-winner main {
+	padding-bottom:em(30);
+}
+
+section {
+	float:left;
+	width:100%;
+	@include bp(tablet) {
+		width:64.58333333333333%; /*  620 / 960*/
+	}
+	h1 {
+		color:#000;
+		font-size:em(30);
+		font-weight:600;
+		margin:0 0 em(3) 0;
+		text-transform:uppercase;
+	}
 	p {
 		color:$body-text;
 		font-size:em(14);
@@ -389,21 +473,15 @@ article:target .no-mask {
 		}
 	}
 	h2 {
+		clear:left;
 		font-size:em(22);
 		color:#000;
-	}
-}
-
-section {
-	float:left;
-	width:100%;
-	@include bp(tablet) {
-		width:64.58333333333333%; /*  620 / 960*/
 	}
 }
 .page main .downloads {
 	padding:em(8) 0 0 0;
 	background:$brand-red;
+	margin-top:em(20);
 	margin-bottom:em(20);
 	h2, p {
 		color:#fff;
@@ -471,7 +549,6 @@ aside .steps-bx {
 		}
 	}
 }
-
 aside .border-bx {
 	margin-top:em(20);
 	padding:em(10) em(13);
@@ -484,8 +561,16 @@ aside .border-bx {
 		display:block;
 		margin:0 auto;
 	}
+	&.twitterxontent {
+		padding-bottom:0;
+		margin-bottom:em(20);
+		h2 {
+			color:$brand-dark;
+			font-size:em(18);
+			font-weight:600;
+		}
+	}
 }
-
 aside .awards-bx {
 	margin-top:em(20);
 	padding:em(10) em(13) em(20) em(13);
@@ -505,6 +590,91 @@ aside .awards-bx {
 			width:40%;
 			font-size:em(20);
 			line-height:24px;
+		}
+	}
+}
+
+aside > div:first-of-type {
+	margin-top:0 !important;
+}
+
+/*  The awards night */
+.page-id-16 section {
+	p {
+		color:$body-text;
+		font-size:em(14);
+		line-height:25px;
+		margin-bottom:em(20);
+		&:first-of-type {
+			font-size:em(22);
+			line-height:30px;
+			color:$text-light;
+		}
+	}
+	h2 {
+		clear:left;
+		font-size:em(22);
+		color:#000;
+	}
+}
+
+.page-id-16 section .booking-block {
+	position:relative;
+	width:100%;
+	display:inline-block;
+	padding:em(14) em(14) em(44) em(14);
+	background:$brand-light;
+	margin-bottom:em(20);
+	h2, h3 {
+		font-size:em(20);
+		font-weight:600;
+		margin-bottom:0;
+	}
+	h3 {
+		color:$brand-dark;
+		margin-bottom:em(12);
+	}
+	p {
+		color:#fff;
+		font-size:em(18);
+		margin-bottom:em(4);
+		@include bp(desktop) {
+			font-size:em(20);
+		}
+		span {
+			color:$brand-dark;
+			font-size:em(18);
+			font-weight:700;
+			@include bp(desktop) {
+				font-size:em(20);
+			}
+		}
+	}
+}
+
+.seealso {
+	width:100%;
+	display:inline-block;
+	background:url(#{$assetPath}/borderbottom.svg) repeat-x top left;
+	padding-top:em(16);
+	margin-top:em(20);
+	margin-bottom:em(20);
+	h3 {
+		color:#000;
+		font-size:em(22);
+		font-weight:600;
+	}
+	ul li {
+		display:block;
+		a {
+			color:$brand-dark;
+			font-size:em(18);
+			display:block;
+			padding-left:em(25);
+			background:url(#{$assetPath}/square.svg) no-repeat center left;
+			&:hover {
+				text-decoration:underline;
+			}
 		}
 	}
 }

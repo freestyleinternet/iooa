@@ -10,7 +10,7 @@
 	});
 	$('#cycle-2 div').click(function(){
 		var index = $('#cycle-2').data('cycle.API').getSlideIndex(this);
-slideshows.cycle('goto', index);
+		slideshows.cycle('goto', index);
 	});
 
 

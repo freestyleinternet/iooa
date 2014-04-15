@@ -6,106 +6,39 @@
             <div class="wall">
                 <article>
 					<div class="no-mask textcontent first"> 
-						<h1>INTERNATIONAL<br>OUTSTANDING<br>ACHIEVEMENT<br>AWARDS</h1> 
+						<h1>INTERNATIONAL<br>OUTSTANDING<br>ACHIEVEMENT<br>AWARDS</h1>
+                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/brand-block.jpg" alt=""/> 
                      </div>
                 	<div class="mask">
                         <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p></div></a>
                     </div>
                 </article>
+                
+                <?php
+					$args = array( 'post_type' => 'awardcategories', 'posts_per_page' => 9);
+					$wp_query = new WP_Query($args);
+						while ( have_posts() ) : the_post(); 
+				?>
                 <article>
                 	<div class="no-mask"> 
-						<h1>PROCUREMENT<br>AND SUPPLY CHAIN<br>MANAGEMENT</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block3.jpg" alt=""/> 
+						<h1><?php the_field('title_for_home_page_wall'); ?></h1>
+                      	<a class="red-btn" href="<?php echo get_permalink(); ?>">Enter Now</a>
+                   	 	<?php 
+							if ( has_post_thumbnail() ) { 
+								the_post_thumbnail('walltile');
+							}
+						?>
                      </div>
                 	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
+                        <a href="<?php echo get_permalink(); ?>"><div class="absolute-center"><p>Enter Now</p> </div></a>
                     </div>
                 </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>Building<br>Standards<br>Management </h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block2.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>Design<br>Management</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block4.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>Facilities<br>Management</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block5.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>Health &amp;<br>Safety<br>Management</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block6.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>People<br>Management</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block7.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>Conservation<br>&amp; Adaption<br>Management</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block8.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>Business<br>Management</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block9.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
-                <article>
-                	<div class="no-mask"> 
-						<h1>Industry<br>New Comer</h1>
-                      	<a class="red-btn" href="#">Enter Now</a>
-                   	 	<img src="<?php bloginfo('template_directory'); ?>/assets/images/block1.jpg" alt=""/> 
-                     </div>
-                	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
-                    </div>
-                </article>
+                <?php endwhile; ?>
+                
                 <article>
                 	<div class="no-mask textcontent"> 
 						<h1>THE JUDGES</h1>
-                        <img class="bottomr" src="<?php bloginfo('template_directory'); ?>/assets/images/home-judges.jpg" alt=""/> 
+                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/block-judges.jpg" alt=""/> 
                     </div>
                 	<div class="mask"> 
                         <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
@@ -114,10 +47,10 @@
                 <article>
                 	<div class="no-mask textcontent"> 
 						<h1>BOOK A TABLE</h1>
-                        <img class="bottomr extra" src="<?php bloginfo('template_directory'); ?>/assets/images/award-note.png" alt=""/>  
+                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/block-booking.jpg" alt=""/>
                     </div>
                 	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
+                        <a href="<?php bloginfo('url'); ?>/the-awards-night/"><div class="absolute-center"><p>Enter Now</p> </div></a>
                     </div>
                 </article>
             </div>
