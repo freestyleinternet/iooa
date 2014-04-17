@@ -12,43 +12,61 @@
         <footer>
         	<div class="wrapper">
                 <div class="col4">
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT THE AWARDS</a></li>
-                        <li><a href="#">Awards latest</a></li>
-                        <li><a href="#">Why take part</a></li>
-                        <li><a href="#">How to take part</a></li>
-                    </ul>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                            'menu'		  => 'foot1',
+                            'container'       => '',
+                            'menu_class'	=> 'listone'
+                        ));
+                    ?>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                            'menu'		  => 'foot2',
+                            'container'       => '',
+                            'menu_class'	=> 'listcap'
+                        ));
+                    ?>
                 </div>
                 <div class="col4">
-                    <ul>
-                        <li><a href="#">AWARD CATEGORIES</a></li>
-                        <li><a href="#">Procurement and Supply Chain Management</a></li>
-                        <li><a href="#">Building Standards’ Management</a></li>
-                        <li><a href="#">Design Management</a></li>
-                        <li><a href="#">Facilities Management</a></li>
-                        <li><a href="#">Health &amp; Safety Management</a></li>
-                    </ul>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                            'menu'		  => 'foot3',
+                            'container'       => '',
+                            'menu_class'	=> 'firstcap'
+                        ));
+                    ?>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                            'menu'		  => 'foot4',
+                            'container'       => '',
+                            'menu_class'	=> 'listred'
+                        ));
+                    ?>
                 </div>
                 <div class="col4">
-                    <ul>
-                        <li><a href="#">THE AWARD NIGHT</a></li>
-                        <li><a href="#">SPONSORS</a></li>
-                        <li><a href="#">CONTACT US</a></li>
-                        <li><a href="#">LEGAL</a></li>
-                    </ul>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                            'menu'		  => 'foot5',
+                            'container'       => '',
+                            'menu_class'	=> 'listred'
+                        ));
+                    ?>
                 </div>
+       
                 <div class="col4">
                     <ul>
                         <li><a href="#">CIOB SITES</a></li>
-                        <li><a href="#">bcschemes.org.uk</a></li>
-                        <li><a href="#">iandrawards.ciob.org</a></li>
-                        <li><a href="#">cmya.co.uk</a></li>
-                        <li><a href="#">artofbuilding.org</a></li>
+                        <?php while(the_repeater_field('website_links', 5)): ?>
+                        	<li><a href="<?php the_sub_field('webslite_url', 5); ?>"><?php the_sub_field('company_name', 5); ?></a></li>
+                        <?php  endwhile; ?>
                     </ul>
                 </div>
-                <?php //dynamic_sidebar( 'Footer' ); ?>
-                <!--<p>&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?></p>-->
+                
             </div>
 		</footer>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/source/twitterfeed.js"></script>

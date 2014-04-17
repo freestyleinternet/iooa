@@ -96,7 +96,7 @@ header {
 	width:100%;
 	display:block;
 	background:$brand-dark;
-	h1 {
+	h1 a {
 		float:left;
 		color:$brand-light;
 		font-size:em(18);
@@ -111,6 +111,9 @@ header {
 		@include bp(tablet) {
 			display:block;
 			visibility:visible;
+		}
+		&:hover {
+			color:$brand-light;
 		}
 	}
 }
@@ -132,8 +135,10 @@ header {
 	}
 	h2 {
 		color:$brand-light;
-		
 		margin-top:em(18);
+		@include bp(tablet) {
+			margin-top:em(6);
+		}
 	}
 	h3 {
 		color:#fff;
@@ -222,6 +227,8 @@ header {
 		left:18px;
 		text-transform:uppercase;
 		z-index:200;
+		
+		
 	}
 	.red-btn {
 		top:em(127);
@@ -251,7 +258,7 @@ header {
 		font-weight:600;
 		padding:0 em(10);
 		border-left:2px solid $brand-red;
-		word-break:break-all;
+		word-break: keep-all;
 		@include bp(tablet) {
 			font-size:em(30);
 			line-height:36px;
@@ -731,6 +738,30 @@ footer {
 		font-size:em(12);
 		font-weight:700;
 	}
+}
+footer ul {
+	margin-bottom:em(2);
+	&.firstcap {
+		li:first-child a {
+			text-transform:uppercase;
+		}
+	}
+}
+footer ul li {
+	&:nth-child(1) a {
+		color:$brand-red;
+	}
+}
+
+footer ul.listone li  {
+	&:nth-child(2) a {
+		color:$brand-red;
+	}
+}
+
+footer ul.listred li a {
+	color:$brand-red;
+	text-transform:uppercase;
 }
 
 .col4 {

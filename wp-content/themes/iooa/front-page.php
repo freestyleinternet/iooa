@@ -10,7 +10,7 @@
                         <img src="<?php bloginfo('template_directory'); ?>/assets/images/brand-block.jpg" alt=""/> 
                      </div>
                 	<div class="mask">
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p></div></a>
+                        <a href="<?php bloginfo('url'); ?>"><div class="absolute-center"><p>Enter Now</p></div></a>
                     </div>
                 </article>
                 
@@ -41,7 +41,7 @@
                         <img src="<?php bloginfo('template_directory'); ?>/assets/images/block-judges.jpg" alt=""/> 
                     </div>
                 	<div class="mask"> 
-                        <a href="http://www.google.com"><div class="absolute-center"><p>Enter Now</p> </div></a>
+                        <a href="http://www.google.com"><div class="absolute-center"><p>View Judges</p> </div></a>
                     </div>
                 </article>
                 <article>
@@ -50,7 +50,7 @@
                         <img src="<?php bloginfo('template_directory'); ?>/assets/images/block-booking.jpg" alt=""/>
                     </div>
                 	<div class="mask"> 
-                        <a href="<?php bloginfo('url'); ?>/the-awards-night/"><div class="absolute-center"><p>Enter Now</p> </div></a>
+                        <a href="<?php bloginfo('url'); ?>/the-awards-night/"><div class="absolute-center"><p>Book Now</p> </div></a>
                     </div>
                 </article>
             </div>

@@ -60,3 +60,28 @@ body .gform_wrapper .gform_footer input[type=submit] {
 }
 
 
+.customSelect {
+/* Styles For Your Select Box */
+position: relative;
+background:#f00 url(#{$assetPath}/dropdown.svg) no-repeat center right !important;
+}
+
+
+.customSelect.changed {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+.customSelectFocus {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+.customSelectOpen {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+
+/* We can style the inner box, too */
+.customSelectInner {
+
+}
+

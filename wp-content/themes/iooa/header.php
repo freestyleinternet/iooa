@@ -10,6 +10,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 	<script type="text/javascript">stLight.options({publisher: "701044eb-d205-461c-95f2-1b96b1e3ee47", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
+    
 	<?php wp_head(); ?>
 </head>
 
@@ -20,18 +21,21 @@
     
     <div class="topbar">
     	<div class="wrapper">
-    		<a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/cibo-logo.svg" alt=""/></a>
+    		<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/cibo-logo.svg" alt=""/></a>
+            <?php if( have_rows('top_links', 5) ): ?>
             <ul>
-              <li><a href="#">THE CIOB</a></li>
-                <li><a href="#">EVENTS</a></li>
-          </ul>	
+              	<?php while(the_repeater_field('top_links', 5)): ?>
+                	<li><a href="<?php the_sub_field('website_address', 5); ?>" target="_blank"><?php the_sub_field('link_name', 5); ?></a></li>
+                <?php  endwhile;  ?>
+          </ul>
+          <?php endif; ?>	
         </div>
     </div>
     
     <header>
     	<div class="wrapper">
         	<div class="world">
-                <h1><?php echo the_field('banner_strap_line', 5); ?></h1>
+                <h1><a href="<?php bloginfo('url'); ?>"><?php echo the_field('banner_strap_line', 5); ?></a></h1>
                 <?php if( get_field('awards_night_date', 5) ): ?>
                 	<h2>Award Night</h2><br>
                 	<h3><?php echo the_field('awards_night_date', 5); ?></h3>

@@ -12,6 +12,8 @@
 		var index = $('#cycle-2').data('cycle.API').getSlideIndex(this);
 		slideshows.cycle('goto', index);
 	});
+	
+	$('select').customSelect();
 
 
 	// Home page wall
