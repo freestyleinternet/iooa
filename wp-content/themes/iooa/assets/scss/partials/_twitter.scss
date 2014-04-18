@@ -1,0 +1,126 @@
+/*  Twitter API */
+#loading-container {
+    padding:0;
+    text-align:center; 
+}
+  #twitter-feed {
+    width:100%;
+    margin:auto;
+    padding:0;
+    overflow:auto;
+}
+ 
+#twitter-feed h1 {
+    display:none;   
+}
+ 
+.twitter-article, #loading-container {
+    width:100%;
+    float:left;
+    padding:0;
+    position:relative;
+}
+.twitter-pic {
+	position:absolute;
+    float:left;
+
+}
+  
+.twitter-pic img {
+   display:none !important;
+}
+  
+/* -------- TEXT STYLING ------*/
+.twitter-text {
+    width:100%;
+    float:left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.twitter-text p {
+	float:left;
+	width:100%;
+	color:$text-light;
+    margin:0px;
+    line-height:16px;
+	font-size:em(12);  
+}
+.twitter-text a,  h1 a {
+    color:$brand-red;
+    text-decoration: none;
+}
+.twitter-text a:hover,  h1 a:hover {
+    text-decoration: none;
+    color:$brand-red;
+}
+  .tweet-time {
+    font-size:em(12);
+    color:$text-light;
+	clear:both;
+    float:left;
+	width:100%;
+	margin-top:0;
+	
+}
+.tweet-time a, .tweet-time a:hover {
+    color:$text-light;
+}
+.tweetprofilelink {
+	display:none !important;
+}
+  .tweetprofilelink a {
+	display:inline-block;
+	width:64%;
+	color:$brand-red;
+}
+.tweetprofilelink a:hover {
+    color:$brand-red;
+}
+  
+/* -------- FEED  ACTIONS ------*/
+#twitter-actions {
+    width:75px;
+    float:right;
+    margin-right:5px;  
+    margin-top:0;
+	margin-bottom:em(20);
+}
+.intent {
+    width:25px;
+    height:16px;
+    float:left;
+}
+.intent a{
+    width:25px;
+    height:16px;
+    display:block;
+    background-image:url(#{$assetPath}/tweet-actions.png);
+    float:left;
+}
+.intent a:hover{
+   /* background-position:-25px 0px;*/
+}
+  
+#intent-retweet a{
+    background-position:0px -17px;
+}
+#intent-retweet a:hover{
+    /*background-position:-25px -17px;*/
+}
+#intent-fave a{
+    background-position:0px -36px;
+}
+#intent-fave a:hover{
+  /*  background-position:-25px -36px;*/
+}
+  
+/* -------- RETWEET INDICATOR ------*/
+#retweet-indicator {
+    width:14px;
+    height:10px;
+   	background-image:url(#{$assetPath}/tweet-actions.png);
+    background-position:-5px -54px;
+    margin-top:3px;
+    float:left;
+}

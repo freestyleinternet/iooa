@@ -1,0 +1,63 @@
+main aside .gallery {
+	position:relative;
+	width:100%;
+	margin-bottom:em(20);
+	h2 {
+		position:absolute;
+		top:10px;
+		left:14px;
+		color:#fff;
+		font-size:em(20);
+		font-weight:600;
+		z-index:3000;
+	}
+}
+#slideshow-2  {
+	margin-top:em(10);
+	div {
+		margin-right:em(10);
+		&:last-of-type {
+			margin-right:0;
+		}
+	}
+}
+#slideshow-2 .slides.cycle-slide {
+	width:auto;
+}
+
+#slideshow-1 {
+	position:relative;
+	width:100%;
+	margin-top:em(20);
+	.cycle-prev {
+		position:absolute;
+		top:50%;
+		left:0;
+		width:19px;
+		height:19px;
+		margin-top:-10px;
+		display:block;
+		background:url(#{$assetPath}/left-arrow.svg) no-repeat top left;	
+		cursor:pointer;
+		z-index:500;
+	
+	}
+	.cycle-next {
+		position:absolute;
+		top:50%;
+		right:0;
+		width:19px;
+		height:19px;
+		margin-top:-10px;
+		display:block;
+		background:url(#{$assetPath}/right-arrow.svg) no-repeat top left;
+		cursor:pointer;
+		z-index:500;
+	
+	}
+}
+.center {
+	text-align:center;
+	font-size:em(14);
+	margin:10px 0;
+}
