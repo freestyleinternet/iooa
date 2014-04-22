@@ -447,7 +447,8 @@ header {
 
 .page main,
 .archive main,
-.single main  {
+.single main,
+.error404 main  {
 	background:#fff;
 }
 
@@ -655,6 +656,15 @@ aside > div:first-of-type {
 			@include bp(desktop) {
 				font-size:em(20);
 			}
+		}
+	}
+}
+
+.error404 section {
+	a {
+		color:$brand-dark;
+		&:hover {
+			text-decoration:underline;
 		}
 	}
 }
